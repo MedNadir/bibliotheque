@@ -1,41 +1,28 @@
 // server.js
-// Import necessary modules
-// Load environment variables from .env file
-import 'dotenv/config'
-// import the Express framework
+// imports necessary modules and middleware
 import express from 'express';
-// import helmet for security headers
-import helmet from 'helmet';
-// import compression for response compression
-import compression from 'compression';
-// import cors for Cross-Origin Resource Sharing
+import 'dotenv/config';
 import cors from 'cors';
-// JSON middleware via express
+import helmet from 'helmet';
+import compression from 'compression';
+import morgan from 'morgan';
 
-// Create an Express application
+// initializes the Express application
 const app = express();
+const PORT = process.env.PORT
 
-// Middleware setup
-// Use helmet to set security-related HTTP headers
-app.use(helmet());
-// Use compression to compress response bodies
-app.use(compression());
-// Enable CORS for all routes
-app.use(cors());
-// Use JSON middleware to parse JSON request bodies
-app.use(express.json());
-// Serve static files from the 'public' directory
+// serves static files from the 'public' directory
 app.use(express.static('public'));
 
-// Define a route for the root URL
-app.get('/', (req, res) => {
-	res.send('OK');
-});
+// applies middleware for security, CORS, compression, JSON parsing, URL-encoded data parsing, and logging
+app.use(helmet());
+app.use(cors());
+app.use(compression());
+app.use(express.json());
+app.use(morgan('dev'));
 
-// Retrieve the port number from environment variables
-const PORT = process.env.PORT || 3000;
-// Start the server and listen on the specified port
-app.listen(PORT, () => {
-	console.log(`Server is running on port ${PORT}`);
-});
+// defines a simple route for the root URL
 
+
+
+console.log(process.env.LOCALHOST || 'http://localhost:3000');

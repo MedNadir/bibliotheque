@@ -1,7 +1,7 @@
 {
   "name": "biblitheque",
   "version": "1.0.0",
-  "description": "projet pedagogique",
+  "description": "Projet pedagogique",
   "homepage": "https://github.com/MedNadir/biblitheque#readme",
   "bugs": {
     "url": "https://github.com/MedNadir/biblitheque/issues"
@@ -10,8 +10,8 @@
     "type": "git",
     "url": "git+https://github.com/MedNadir/biblitheque.git"
   },
-  "license": "ISC",
-  "author": "Benali N",
+  "license": "UNLICENSED",
+  "author": "Benali",
   "type": "module",
   "main": "server.js",
   "scripts": {
@@ -19,11 +19,14 @@
   },
   "dependencies": {
     "compression": "^1.8.1",
+    "cookie-parser": "^1.4.7",
     "cors": "^2.8.5",
     "dotenv": "^17.2.3",
     "express": "^5.2.1",
+    "express-rate-limit": "^8.2.1",
     "helmet": "^8.1.0",
-    "json": "^11.0.0"
+    "json": "^11.0.0",
+    "morgan": "^1.10.1"
   },
   "devDependencies": {
     "nodemon": "^3.1.11"
